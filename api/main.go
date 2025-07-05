@@ -1,7 +1,8 @@
 package main
 
-// # App entry point
-
+/*
+App entry point
+*/
 import (
 	"web-page-analyzer/router"
 )

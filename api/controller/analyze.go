@@ -1,6 +1,8 @@
 package api
 
-//   # Controller layer (HTTP handlers)
+/*
+	Controller layer (HTTP handlers)
+*/
 
 import (
 	"net/http"

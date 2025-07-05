@@ -1,8 +1,9 @@
 package processor
 
-// # Core HTML parsing logic
-// based on goquery
-
+/*
+	Core HTML parsing logic
+	based on goquery
+*/
 import (
 	"net/http"
 	"net/url"

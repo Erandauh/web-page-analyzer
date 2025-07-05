@@ -4,8 +4,10 @@ go 1.20
 
 require github.com/gin-gonic/gin v1.10.1
 
+require github.com/swaggo/files v1.0.1 // indirect
+
 require (
-github.com/PuerkitoBio/goquery v1.8.1
+	github.com/PuerkitoBio/goquery v1.8.1
 	github.com/andybalholm/cascadia v1.3.1 // indirect
 	github.com/bytedance/sonic v1.11.6 // indirect
 	github.com/bytedance/sonic/loader v0.1.1 // indirect

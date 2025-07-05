@@ -1,7 +1,8 @@
 package model
 
-// # Shared structs and types
-
+/*
+	Shared structs and types
+*/
 type AnalysisResult struct {
 	HTMLVersion       string         `json:"html_version"`
 	Title             string         `json:"title"`
