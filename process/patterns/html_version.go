@@ -22,10 +22,8 @@ func (p *HTMLVersionPattern) Apply(ctx *Context, result map[string]any) error {
 	switch {
 	case strings.Contains(html, "<!doctype html>"):
 		result[p.Name()] = "HTML5"
-	case strings.Contains(html, "html 4.01 strict"):
-		result[p.Name()] = "HTML 4.01 Strict"
-	case strings.Contains(html, "html 4.01 transitional"):
-		result[p.Name()] = "HTML 4.01 Transitional"
+	case strings.Contains(html, "html 4.01"):
+		result[p.Name()] = "HTML 4.01"
 	default:
 		result[p.Name()] = "Unknown"
 	}

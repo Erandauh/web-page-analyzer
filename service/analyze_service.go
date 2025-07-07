@@ -15,7 +15,6 @@ import (
 
 	"web-page-analyzer/model"
 	"web-page-analyzer/process/patterns"
-	//processor "web-page-analyzer/process"
 )
 
 func AnalyzeURL(rawURL string) (model.AnalysisResult, error) {
@@ -53,41 +52,20 @@ func AnalyzeURL(rawURL string) (model.AnalysisResult, error) {
 
 	Execute(ctx, result)
 
-	// result := model.AnalysisResult{
-	// 	HTMLVersion:    processor.DetectHTMLVersion(html),
-	// 	Title:          doc.Find("title").Text(),
-	// 	Headings:       processor.CountHeadings(doc),
-	// 	LoginFormFound: processor.DetectLoginForm(doc),
-	// }
-
-	// internal, external, broken := processor.CountLinks(doc, parsedURL)
-	// result.InternalLinks = internal
-	// result.ExternalLinks = external
-	// result.InaccessibleLinks = broken
-
 	final := model.AnalysisResult{}
 	if val, ok := result["html_version"].(string); ok {
 		final.HTMLVersion = val
 	}
-	if val, ok := result["title"].(string); ok {
-		final.Title = val
-	}
 	if val, ok := result["headings"].(map[string]int); ok {
 		final.Headings = val
 	}
-	if val, ok := result["internal_links"].(int); ok {
-		final.InternalLinks = val
-	}
-	if val, ok := result["external_links"].(int); ok {
-		final.ExternalLinks = val
-	}
-	if val, ok := result["inaccessible_links"].(int); ok {
-		final.InaccessibleLinks = val
+	if val, ok := result["links"].(map[string]int); ok {
+		final.Links = val
 	}
 	if val, ok := result["login_form_found"].(bool); ok {
 		final.LoginFormFound = val
 	}
-	return final, nil
+	final.Title = doc.Find("title").Text()
 
 	log.Printf("[INFO] Finished analysis for URL: %s", rawURL)
 	return final, nil
