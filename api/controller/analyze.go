@@ -9,6 +9,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
+	"web-page-analyzer/model"
 	handler "web-page-analyzer/service"
 )
 
@@ -30,4 +31,31 @@ func Analyze(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, result)
+}
+
+func AnalyzeAsync(c *gin.Context) {
+	var req AnalyzeRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid or missing URL"})
+		return
+	}
+
+	done := make(chan model.AnalysisResult)
+	errChan := make(chan error)
+
+	job := handler.AnalyzeURLAsync(req.URL, done, errChan)
+
+	c.JSON(http.StatusAccepted, job)
+}
+
+func GetAsyncAnalysisByID(c *gin.Context) {
+	jobID := c.Param("id")
+
+	job, err := handler.GetAnalysisResultByID(jobID)
+	if err != nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, job)
 }

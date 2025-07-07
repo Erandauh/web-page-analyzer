@@ -19,5 +19,11 @@ func SetupRouter() *gin.Engine {
 	// analysis
 	router.POST("/analyze", api.Analyze)
 
+	// analysis async
+	router.POST("/analyze/async", api.AnalyzeAsync)
+
+	// analysis job status
+	router.GET("/analyze/async/:id", api.GetAsyncAnalysisByID)
+
 	return router
 }
