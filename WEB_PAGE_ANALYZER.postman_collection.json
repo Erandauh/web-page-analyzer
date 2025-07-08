@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "3500987f-3d73-406c-acca-c8e7328bc60a",
+		"name": "WEB_PAGE_ANALYZER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1753007"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/analyze",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"https://alem.lk/welcome\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/analyze",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"analyze"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "www",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/analyze/async",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"https://alem.lk/welcome\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/analyze/async",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"analyze",
+						"async"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "www",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/analyze/async/{id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"https://alem.lk/welcome\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/analyze/async/081facd6-5b7b-4bdc-9a53-585135da195b",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"analyze",
+						"async",
+						"081facd6-5b7b-4bdc-9a53-585135da195b"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "www",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/health",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

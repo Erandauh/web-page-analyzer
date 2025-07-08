@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Page Analyzer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    pre {
+      background: #f4f4f4;
+      padding: 1rem;
+      border-radius: 5px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .status {
+      margin: 10px 0;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Web Page Analyzer</h1>
+
+  <label for="url">Enter URL:</label>
+  <input type="text" id="url" placeholder="https://example.com">
+
+  <button onclick="analyze()">Analyze (Sync)</button>
+  <button onclick="analyzeAsync()">Analyze (Async)</button>
+
+  <div class="status" id="status"></div>
+  <pre id="result"></pre>
+
+  <script>
+    const apiBase = "http://localhost:8080";
+
+    async function analyze() {
+      const url = document.getElementById("url").value;
+      document.getElementById("status").textContent = "Analyzing synchronously...";
+      const res = await fetch(`${apiBase}/analyze`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ url })
+      });
+
+      const data = await res.json();
+      document.getElementById("status").textContent = "Analysis complete.";
+      document.getElementById("result").textContent = JSON.stringify(data, null, 2);
+    }
+
+    async function analyzeAsync() {
+      const url = document.getElementById("url").value;
+      document.getElementById("status").textContent = "Submitting async job...";
+      const res = await fetch(`${apiBase}/analyze/async`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ url })
+      });
+
+      const job = await res.json();
+      const jobId = job.job_id;
+      document.getElementById("status").textContent = `Job ID: ${jobId} (waiting...)`;
+
+      const poll = setInterval(async () => {
+        const r = await fetch(`${apiBase}/analyze/async/${jobId}`);
+        const data = await r.json();
+
+        if (data.status === "COMPLETED" || data.status === "FAILED") {
+          clearInterval(poll);
+          document.getElementById("status").textContent = `Job ${data.status}`;
+          document.getElementById("result").textContent = JSON.stringify(data, null, 2);
+        }
+      }, 2000);
+    }
+  </script>
+</body>
+</html>

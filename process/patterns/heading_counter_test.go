@@ -1,6 +1,7 @@
 package patterns
 
 import (
+	"net/url"
 	"strings"
 	"testing"
 
@@ -8,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestApply_HeadingCounterPattern_Successfully(t *testing.T) {
+func Test_HeadingCounterPattern_Apply(t *testing.T) {
 	type testCase struct {
 		name     string
 		html     string
@@ -58,7 +59,11 @@ func TestApply_HeadingCounterPattern_Successfully(t *testing.T) {
 			doc, err := goquery.NewDocumentFromReader(strings.NewReader(tc.html))
 			assert.NoError(t, err)
 
+			parsedURL, err := url.Parse("https://test.com")
+			assert.NoError(t, err)
+
 			ctx := &Context{
+				URL:      parsedURL,
 				HTML:     tc.html,
 				Document: doc,
 			}
@@ -68,9 +73,9 @@ func TestApply_HeadingCounterPattern_Successfully(t *testing.T) {
 			err = pattern.Apply(ctx, result)
 			assert.NoError(t, err)
 
-			got := result[pattern.Name()].(map[string]int)
+			val := result[pattern.Name()].(map[string]int)
 
-			assert.Equal(t, tc.expected, got)
+			assert.Equal(t, tc.expected, val)
 		})
 	}
 }

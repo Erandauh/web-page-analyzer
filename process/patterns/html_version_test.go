@@ -1,6 +1,7 @@
 package patterns
 
 import (
+	"net/url"
 	"strings"
 	"testing"
 
@@ -29,22 +30,37 @@ func TestApply_HTMLVersionPattern_Successfully(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			doc, _ := goquery.NewDocumentFromReader(strings.NewReader(tt.html))
+			doc, err := goquery.NewDocumentFromReader(strings.NewReader(tt.html))
+			if err != nil {
+				t.Fatalf("Failed to create document: %v", err)
+			}
+
+			url, err := url.Parse("https://test.com")
+			if err != nil {
+				t.Fatalf("invalid URL: %v", err)
+			}
 
 			ctx := &Context{
 				HTML:     tt.html,
 				Document: doc,
+				URL:      url,
 			}
 
 			result := make(map[string]any)
 
 			p := &HTMLVersionPattern{}
-			p.Apply(ctx, result)
+			err = p.Apply(ctx, result)
+			if err != nil {
+				t.Errorf("Unexpected error: %v", err)
+			}
 
-			val := result[p.Name()]
+			valStr, ok := result[p.Name()].(string)
+			if !ok {
+				t.Fatalf("Expected result to be string, got: %T", result[p.Name()])
+			}
 
-			if val != tt.expected {
-				t.Errorf("Expected: %s, Got: %s", tt.expected, val)
+			if valStr != tt.expected {
+				t.Errorf("Expected: %s, Got: %s", tt.expected, valStr)
 			}
 		})
 	}

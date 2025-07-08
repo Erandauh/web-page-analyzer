@@ -22,15 +22,22 @@ import (
 // analyze web url async
 func AnalyzeURLAsync(rawURL string, done chan<- model.AnalysisResult, errChan chan<- error) model.Job {
 
+	log.Printf("Starting async analysis for URL: %s", rawURL)
+
 	job := persistance.DefaultStore.CreateJob(rawURL)
+	log.Printf("Job created with ID: %s", job.ID)
 
 	go func() {
+		log.Printf("Running analysis for Job ID: %s", job.ID)
 		result, err := AnalyzeURL(rawURL)
 		if err != nil {
+			log.Printf("Analysis failed for Job ID: %s, Error: %v", job.ID, err)
 			persistance.DefaultStore.CompleteJob(job.ID, result, err)
 			errChan <- err
 			return
 		}
+
+		log.Printf("Analysis completed successfully for Job ID: %s", job.ID)
 		persistance.DefaultStore.CompleteJob(job.ID, result, nil)
 		done <- result
 	}()
@@ -62,7 +69,12 @@ func AnalyzeURL(rawURL string) (model.AnalysisResult, error) {
 		return model.AnalysisResult{}, err
 	}
 
-	parsedURL, _ := url.Parse(rawURL)
+	parsedURL, err := url.Parse(rawURL)
+	if err != nil {
+		log.Printf("Failed to parse URL '%s': %v", rawURL, err)
+		return model.AnalysisResult{}, err
+	}
+	log.Printf("Parsed URL successfully: %s", parsedURL.String())
 
 	ctx := &patterns.Context{
 		HTML:     html,
@@ -72,9 +84,14 @@ func AnalyzeURL(rawURL string) (model.AnalysisResult, error) {
 
 	result := make(map[string]any)
 
+	log.Println("Executing analysis patterns...")
 	Execute(ctx, result)
+	log.Println("Pattern execution completed")
 
-	return toAnalysisResult(result, rawURL, doc), nil
+	finalResult := toAnalysisResult(result, rawURL, doc)
+	log.Printf("AnalysisResult constructed for URL: %s", rawURL)
+
+	return finalResult, nil
 }
 
 // get analyze web url async job data

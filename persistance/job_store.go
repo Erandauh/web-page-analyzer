@@ -9,6 +9,9 @@ import (
 	"web-page-analyzer/model"
 )
 
+/*
+maintain jobs and results in memory
+*/
 type MemoryStore struct {
 	mu   sync.RWMutex
 	jobs map[string]*model.Job

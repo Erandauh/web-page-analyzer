@@ -9,3 +9,7 @@ func Register(p Pattern) {
 func All() []Pattern {
 	return registered
 }
+
+func Clear() {
+	registered = nil
+}
