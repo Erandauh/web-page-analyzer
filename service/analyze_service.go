@@ -6,13 +6,13 @@ package analyze_service
 import (
 	"errors"
 	"io"
-	"log"
 	"net/http"
 	"net/url"
 	"strings"
 	"time"
 
 	"github.com/PuerkitoBio/goquery"
+	"github.com/sirupsen/logrus"
 
 	"web-page-analyzer/model"
 	"web-page-analyzer/persistance"
@@ -22,22 +22,24 @@ import (
 // analyze web url async
 func AnalyzeURLAsync(rawURL string, done chan<- model.AnalysisResult, errChan chan<- error) model.Job {
 
-	log.Printf("Starting async analysis for URL: %s", rawURL)
+	log := logrus.WithField("url", rawURL)
+	log.Info("Starting async analysis")
 
 	job := persistance.DefaultStore.CreateJob(rawURL)
-	log.Printf("Job created with ID: %s", job.ID)
+	log = log.WithField("job_id", job.ID)
+	log.Info("Job created")
 
 	go func() {
-		log.Printf("Running analysis for Job ID: %s", job.ID)
+		log.Info("Running analysis")
 		result, err := AnalyzeURL(rawURL)
 		if err != nil {
-			log.Printf("Analysis failed for Job ID: %s, Error: %v", job.ID, err)
+			log.WithError(err).Warn("Analysis failed")
 			persistance.DefaultStore.CompleteJob(job.ID, result, err)
 			errChan <- err
 			return
 		}
 
-		log.Printf("Analysis completed successfully for Job ID: %s", job.ID)
+		log.Info("Analysis completed successfully")
 		persistance.DefaultStore.CompleteJob(job.ID, result, nil)
 		done <- result
 	}()
@@ -48,33 +50,35 @@ func AnalyzeURLAsync(rawURL string, done chan<- model.AnalysisResult, errChan ch
 // analyze web url
 func AnalyzeURL(rawURL string) (model.AnalysisResult, error) {
 
+	log := logrus.WithField("url", rawURL)
+
 	client := &http.Client{Timeout: 10 * time.Second}
 	resp, err := client.Get(rawURL)
 	if err != nil {
-		log.Printf("[ERROR] Failed to fetch URL: %s, error: %v", rawURL, err)
+		log.WithError(err).Error("Failed to fetch URL")
 		return model.AnalysisResult{}, err
 	}
 	defer resp.Body.Close()
 
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		log.Printf("[ERROR] Failed to read response body from URL: %s, error: %v", rawURL, err)
+		log.WithError(err).Error("Failed to read response body")
 		return model.AnalysisResult{}, err
 	}
 
 	html := string(body)
 	doc, err := goquery.NewDocumentFromReader(strings.NewReader(html))
 	if err != nil {
-		log.Printf("[ERROR] Failed to parse HTML for URL: %s, error: %v", rawURL, err)
+		log.WithError(err).Error("Failed to parse HTML")
 		return model.AnalysisResult{}, err
 	}
 
 	parsedURL, err := url.Parse(rawURL)
 	if err != nil {
-		log.Printf("Failed to parse URL '%s': %v", rawURL, err)
+		log.WithError(err).Error("Failed to parse URL")
 		return model.AnalysisResult{}, err
 	}
-	log.Printf("Parsed URL successfully: %s", parsedURL.String())
+	log.WithField("parsed_url", parsedURL.String()).Info("Parsed URL successfully")
 
 	ctx := &patterns.Context{
 		HTML:     html,
@@ -84,12 +88,12 @@ func AnalyzeURL(rawURL string) (model.AnalysisResult, error) {
 
 	result := make(map[string]any)
 
-	log.Println("Executing analysis patterns...")
+	log.Info("Executing analysis patterns...")
 	Execute(ctx, result)
-	log.Println("Pattern execution completed")
+	log.Info("Pattern execution completed")
 
 	finalResult := toAnalysisResult(result, rawURL, doc)
-	log.Printf("AnalysisResult constructed for URL: %s", rawURL)
+	log.Info("AnalysisResult constructed")
 
 	return finalResult, nil
 }
@@ -121,7 +125,7 @@ func toAnalysisResult(result map[string]any, rawURL string, doc *goquery.Documen
 	}
 	final.Title = doc.Find("title").Text()
 
-	log.Printf("[INFO] Finished analysis for URL: %s", rawURL)
+	logrus.WithField("url", rawURL).Info("Finished analysis for URL")
 
 	return final
 }

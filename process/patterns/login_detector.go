@@ -5,10 +5,10 @@ package patterns
 */
 
 import (
-	"log"
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
+	"github.com/sirupsen/logrus"
 )
 
 type LoginDetectorPattern struct{}
@@ -23,7 +23,11 @@ func (p *LoginDetectorPattern) Name() string {
 
 func (p *LoginDetectorPattern) Apply(ctx *Context, result map[string]any) error {
 
-	log.Printf("[%s] Starting login form detection", p.Name())
+	logrus.WithFields(logrus.Fields{
+		"pattern": p.Name(),
+		"url":     ctx.URL.String(),
+	}).Info("Starting login form detection")
+
 	found := false
 	formCount := 0
 
@@ -60,14 +64,19 @@ func (p *LoginDetectorPattern) Apply(ctx *Context, result map[string]any) error 
 		if hasPass && isLoginAction && hasEmailOrUser && hasSubmit {
 			formCount++
 			found = true
-			log.Printf("[%s] Login form candidate #%d found [pass: %v, user/email: %v, submit: %v, action: %v]", p.Name(), formCount, hasPass, hasEmailOrUser, hasSubmit, isLoginAction)
+			logrus.WithFields(logrus.Fields{
+				"has_password":   hasPass,
+				"has_email_user": hasEmailOrUser,
+				"has_submit":     hasSubmit,
+				"is_post":        isLoginAction,
+			}).Info("Login form candidate found")
 		}
 	})
 
-	log.Printf("[%s] Login forms detected: %d", p.Name(), formCount)
+	logrus.WithField("count", formCount).Info("Login forms detected")
 
 	result[p.Name()] = found
-	log.Printf("[%s] Login detection result: %v", p.Name(), found)
+	logrus.WithField("login_detected", found).Info("Login detection result")
 
 	return nil
 

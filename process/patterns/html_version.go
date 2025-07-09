@@ -5,8 +5,9 @@ package patterns
 */
 
 import (
-	"log"
 	"strings"
+
+	"github.com/sirupsen/logrus"
 )
 
 type HTMLVersionPattern struct{}
@@ -20,18 +21,22 @@ func (p *HTMLVersionPattern) Name() string {
 }
 
 func (p *HTMLVersionPattern) Apply(ctx *Context, result map[string]any) error {
-	log.Printf("[%s] Starting HTML version detection for URL: %s", p.Name(), ctx.URL.String())
+	logrus.WithFields(logrus.Fields{
+		"pattern": p.Name(),
+		"url":     ctx.URL.String(),
+	}).Info("Starting HTML version detection")
+
 	html := strings.ToLower(ctx.HTML)
 
 	switch {
 	case strings.Contains(html, "<!doctype html>"):
-		log.Printf("[%s] Detected: HTML5", p.Name())
+		logrus.WithField("pattern", p.Name()).Info("Detected HTML5")
 		result[p.Name()] = "HTML5"
 	case strings.Contains(html, "html 4.01"):
-		log.Printf("[%s] Detected: HTML 4.01", p.Name())
+		logrus.WithField("pattern", p.Name()).Info("Detected HTML 4.01")
 		result[p.Name()] = "HTML 4.01"
 	default:
-		log.Printf("[%s] HTML version unknown", p.Name())
+		logrus.WithField("pattern", p.Name()).Warn("HTML version unknown")
 		result[p.Name()] = "Unknown"
 	}
 
