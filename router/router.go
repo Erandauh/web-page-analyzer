@@ -4,8 +4,8 @@ package router
 
 import (
 	api "web-page-analyzer/api/controller"
-
 	_ "web-page-analyzer/docs"
+	"web-page-analyzer/middleware"
 
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
@@ -15,8 +15,10 @@ import (
 func SetupRouter() *gin.Engine {
 	router := gin.Default()
 
-	// Enable CORS
-	router.Use(CORSMiddleware())
+	// Register middleware
+	router.Use(middleware.LoggerMiddleware())
+	router.Use(middleware.CORSMiddleware())
+	router.Use(middleware.RecoveryMiddleware())
 
 	router.GET("/health", func(c *gin.Context) {
 		c.JSON(200, gin.H{"status": "ok"})
@@ -37,19 +39,4 @@ func SetupRouter() *gin.Engine {
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	return router
-}
-
-func CORSMiddleware() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
-		c.Writer.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-		c.Writer.Header().Set("Access-Control-Allow-Headers", "Origin, Content-Type, Accept")
-
-		if c.Request.Method == "OPTIONS" {
-			c.AbortWithStatus(204)
-			return
-		}
-
-		c.Next()
-	}
 }
