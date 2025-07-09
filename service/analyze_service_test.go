@@ -30,7 +30,7 @@ func TestGetAnalysisResultByID(t *testing.T) {
 }
 
 func TestAnalyzeURL(t *testing.T) {
-	// Start mock HTTP server
+
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		html := `
 		<!DOCTYPE html>
@@ -39,9 +39,10 @@ func TestAnalyzeURL(t *testing.T) {
 			<body>
 				<h1>Main Heading</h1>
 				<h2>Sub Heading</h2>
-				<form>
+				<form action="/login" method="POST">
 					<input type="text" name="user">
 					<input type="password" name="pass">
+					<input type="submit" value="Login">
 				</form>
 				<a href="/internal">Internal</a>
 				<a href="https://external.com">External</a>
@@ -51,7 +52,6 @@ func TestAnalyzeURL(t *testing.T) {
 	}))
 	defer server.Close()
 
-	// Call the function under test
 	result, err := AnalyzeURL(server.URL)
 
 	assert.NoError(t, err)
@@ -59,17 +59,17 @@ func TestAnalyzeURL(t *testing.T) {
 	assert.Equal(t, "HTML5", result.HTMLVersion)
 	assert.Equal(t, "Test Page", result.Title)
 
-	// Headings
+	// headings
 	expectedHeadings := map[string]int{
 		"h1": 1, "h2": 1, "h3": 0, "h4": 0, "h5": 0, "h6": 0,
 	}
 	assert.Equal(t, expectedHeadings, result.Headings)
 
-	// Login form detection
+	// login
 	assert.True(t, result.LoginFormFound)
 
-	// Links: we don’t assert exact link counts here, as link checking (HEAD requests) depends on the environment.
+	// links
 	assert.Contains(t, result.Links, "internal")
 	assert.Contains(t, result.Links, "external")
-	assert.Contains(t, result.Links, "broken") // might be 0
+	assert.Contains(t, result.Links, "broken")
 }

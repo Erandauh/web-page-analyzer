@@ -22,15 +22,6 @@ func init() {
 	Register(&LinkCounterPattern{})
 }
 
-// func NewLinkCounterPattern(client *http.Client) *LinkCounterPattern {
-// 	if client == nil {
-// 		client = &http.Client{Timeout: 5 * time.Second}
-// 	}
-// 	return &LinkCounterPattern{
-// 		Client: client,
-// 	}
-// }
-
 func (p *LinkCounterPattern) Name() string {
 	return "links"
 }

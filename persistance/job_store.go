@@ -45,7 +45,7 @@ func (s *MemoryStore) CompleteJob(id string, result model.AnalysisResult, err er
 
 	if job, ok := s.jobs[id]; ok {
 		if err != nil {
-			job.Error = err
+			job.Error = err.Error()
 			job.Status = "FAILED"
 			job.Result = nil
 		} else {

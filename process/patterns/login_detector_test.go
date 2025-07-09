@@ -20,7 +20,7 @@ func TestLoginDetectorPattern_Apply(t *testing.T) {
 			name: "Login form working",
 			html: `
 				<html><body>
-					<form action="/login">
+					<form action="/login" method="POST">
 						<input type="text" name="username">
 						<input type="password" name="password">
 						<input type="submit" value="Login">

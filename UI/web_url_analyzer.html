@@ -40,6 +40,20 @@
       margin: 10px 0;
       font-weight: bold;
     }
+    .spinner {
+        border: 4px solid rgba(0,0,0,0.1);
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 1s linear infinite;
+        margin: 10px auto;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
   </style>
 </head>
 <body>
@@ -52,14 +66,23 @@
   <button onclick="analyzeAsync()">Analyze (Async)</button>
 
   <div class="status" id="status"></div>
+  <div id="spinner" class="spinner" style="display: none;"></div>
+  <div id="errorDetailsContainer" style="display: none;">
+    <button onclick="toggleError()" id="toggleErrorBtn">Show Error Details</button>
+    <pre id="errorDetails" style="display: none; background-color: #ffe6e6; border: 1px solid #ff4d4d;"></pre>
+  </div>
   <pre id="result"></pre>
 
   <script>
+    
     const apiBase = "http://localhost:8080";
+    const statusEl = document.getElementById("status");
 
     async function analyze() {
       const url = document.getElementById("url").value;
-      document.getElementById("status").textContent = "Analyzing synchronously...";
+      statusEl.textContent = "🔍 Analyzing synchronously...";
+
+      try{
       const res = await fetch(`${apiBase}/analyze`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -67,13 +90,23 @@
       });
 
       const data = await res.json();
-      document.getElementById("status").textContent = "Analysis complete.";
+      statusEl.textContent = "✅ Analysis complete.";
       document.getElementById("result").textContent = JSON.stringify(data, null, 2);
+    } catch (err) {
+      statusEl.textContent = `❌ Failed to analyze: ${err.message}`;
+    }
     }
 
     async function analyzeAsync() {
+      const statusEl = document.getElementById("status");
+      const errorContainer = document.getElementById("errorDetailsContainer");
+      const errorDetails = document.getElementById("errorDetails");
+
       const url = document.getElementById("url").value;
-      document.getElementById("status").textContent = "Submitting async job...";
+      statusEl.textContent = "⏳ Submitting async job...";
+      showSpinner();
+
+      try {
       const res = await fetch(`${apiBase}/analyze/async`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -82,19 +115,60 @@
 
       const job = await res.json();
       const jobId = job.job_id;
-      document.getElementById("status").textContent = `Job ID: ${jobId} (waiting...)`;
+      statusEl.textContent = `Job ID: ${jobId} (waiting...)`;
 
       const poll = setInterval(async () => {
+        try {
         const r = await fetch(`${apiBase}/analyze/async/${jobId}`);
         const data = await r.json();
 
         if (data.status === "COMPLETED" || data.status === "FAILED") {
           clearInterval(poll);
-          document.getElementById("status").textContent = `Job ${data.status}`;
+          hideSpinner();
+
+        statusEl.textContent = data.status === "COMPLETED"
+        ? "✅ Job completed successfully."
+        : "❌ Job failed !";
+
           document.getElementById("result").textContent = JSON.stringify(data, null, 2);
+
+            if (data.status === "FAILED" && data.error) {
+                errorContainer.style.display = "block";
+                errorDetails.textContent = data.error;
+            } else {
+                errorContainer.style.display = "none";
+            }
+        }
+        } catch (err) {
+          clearInterval(poll);
+          statusEl.textContent = `❌ Error polling job: ${err.message}`;
         }
       }, 2000);
+    } 
+    catch (err) {
+      statusEl.textContent = `❌ Failed to submit async job: ${err.message}`;
     }
+    }
+
+function showSpinner() {
+  document.getElementById("spinner").style.display = "block";
+}
+
+function hideSpinner() {
+  document.getElementById("spinner").style.display = "none";
+}
+
+function toggleError() {
+  const pre = document.getElementById("errorDetails");
+  const btn = document.getElementById("toggleErrorBtn");
+  if (pre.style.display === "none") {
+    pre.style.display = "block";
+    btn.textContent = "Hide Error Details";
+  } else {
+    pre.style.display = "none";
+    btn.textContent = "Show Error Details";
+  }
+}
   </script>
 </body>
 </html>

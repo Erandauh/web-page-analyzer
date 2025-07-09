@@ -20,6 +20,6 @@ type Job struct {
 	ID        string          `json:"job_id"`
 	Status    string          `json:"status"`
 	Result    *AnalysisResult `json:"result,omitempty"`
-	Error     error           `json:"error,omitempty"`
+	Error     string          `json:"error,omitempty"`
 	CraetedAt time.Time       `json:"created_at"`
 }

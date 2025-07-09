@@ -30,15 +30,37 @@ func (p *LoginDetectorPattern) Apply(ctx *Context, result map[string]any) error 
 	ctx.Document.Find("form").Each(func(_ int, s *goquery.Selection) {
 
 		hasPass := false
+		hasEmailOrUser := false
+		hasSubmit := false
+		isLoginAction := false
+
 		s.Find("input").Each(func(_ int, input *goquery.Selection) {
-			t, _ := input.Attr("type")
-			if strings.ToLower(t) == "password" {
+			inputType, _ := input.Attr("type")
+			inputType = strings.ToLower(inputType)
+
+			switch inputType {
+			case "password":
 				hasPass = true
+			case "email", "text":
+				nameAttr, _ := input.Attr("name")
+				if val := strings.ToLower(nameAttr); strings.Contains(val, "email") || strings.Contains(val, "user") {
+					hasEmailOrUser = true
+				}
+			case "submit":
+				hasSubmit = true
 			}
 		})
-		if hasPass {
+
+		method, _ := s.Attr("method")
+		if strings.ToUpper(method) == "POST" {
+			isLoginAction = true
+		}
+
+		// final condition:
+		if hasPass && isLoginAction && hasEmailOrUser && hasSubmit {
 			formCount++
 			found = true
+			log.Printf("[%s] Login form candidate #%d found [pass: %v, user/email: %v, submit: %v, action: %v]", p.Name(), formCount, hasPass, hasEmailOrUser, hasSubmit, isLoginAction)
 		}
 	})
 
