@@ -5,7 +5,11 @@ package router
 import (
 	api "web-page-analyzer/api/controller"
 
+	_ "web-page-analyzer/docs"
+
 	"github.com/gin-gonic/gin"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 func SetupRouter() *gin.Engine {
@@ -14,19 +18,23 @@ func SetupRouter() *gin.Engine {
 	// Enable CORS
 	router.Use(CORSMiddleware())
 
-	// health check
 	router.GET("/health", func(c *gin.Context) {
 		c.JSON(200, gin.H{"status": "ok"})
 	})
 
-	// analysis
-	router.POST("/analyze", api.Analyze)
+	// v1 Api group
+	v1 := router.Group("/v1")
+	{
+		// analysis
+		v1.POST("/analyze", api.Analyze)
+		// analysis async
+		v1.POST("/analyze/async", api.AnalyzeAsync)
+		// analysis job status
+		v1.GET("/analyze/async/:id", api.GetAsyncAnalysisByID)
+	}
 
-	// analysis async
-	router.POST("/analyze/async", api.AnalyzeAsync)
-
-	// analysis job status
-	router.GET("/analyze/async/:id", api.GetAsyncAnalysisByID)
+	// swagger
+	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	return router
 }

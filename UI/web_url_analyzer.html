@@ -75,11 +75,14 @@
 
   <script>
     
-    const apiBase = "http://localhost:8080";
+    const apiBase = "http://localhost:8080/v1";
     const statusEl = document.getElementById("status");
 
     async function analyze() {
-      const url = document.getElementById("url").value;
+      const url = document.getElementById("url").value;      
+      const errorContainer = document.getElementById("errorDetailsContainer");
+      const errorDetails = document.getElementById("errorDetails");
+
       statusEl.textContent = "🔍 Analyzing synchronously...";
 
       try{
@@ -90,8 +93,17 @@
       });
 
       const data = await res.json();
-      statusEl.textContent = "✅ Analysis complete.";
-      document.getElementById("result").textContent = JSON.stringify(data, null, 2);
+      if(data.error != null){
+        statusEl.textContent = `❌ Failed to analyze!`;
+        errorContainer.style.display = "block";
+        errorDetails.textContent = JSON.stringify(data, null, 2);
+      }
+      else{
+        errorContainer.style.display = "none";
+        statusEl.textContent = "✅ Analysis complete.";
+        document.getElementById("result").textContent = JSON.stringify(data, null, 2);
+      }
+      
     } catch (err) {
       statusEl.textContent = `❌ Failed to analyze: ${err.message}`;
     }
@@ -128,7 +140,7 @@
 
         statusEl.textContent = data.status === "COMPLETED"
         ? "✅ Job completed successfully."
-        : "❌ Job failed !";
+        : "❌ Job failed!";
 
           document.getElementById("result").textContent = JSON.stringify(data, null, 2);
 

@@ -3,6 +3,13 @@ package model
 import "time"
 
 /*
+	Analysis Rewuest of the url
+*/
+type AnalyzeRequest struct {
+	URL string `json:"url" binding:"required,url"`
+}
+
+/*
 	Analysis Result of the url
 */
 type AnalysisResult struct {

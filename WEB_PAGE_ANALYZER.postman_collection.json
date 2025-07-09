@@ -24,17 +24,18 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/analyze",
+					"raw": "localhost:8080/v1/analyze",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"v1",
 						"analyze"
 					],
 					"query": [
 						{
-							"key": "url",
+							"key": "",
 							"value": "www",
 							"disabled": true
 						}
@@ -53,7 +54,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"url\": \"https://alem.lk/welcome\"\r\n}",
+					"raw": "{\r\n    \"url\": \"https://www.tesla.com/\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -61,12 +62,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/analyze/async",
+					"raw": "localhost:8080/v1/analyze/async",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"v1",
 						"analyze",
 						"async"
 					],
@@ -94,7 +96,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"url\": \"https://alem.lk/welcome\"\r\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -102,15 +104,16 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/analyze/async/081facd6-5b7b-4bdc-9a53-585135da195b",
+					"raw": "localhost:8080/v1/analyze/async/d1b807d9-8bc5-48d1-9051-a14f46c931b2",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"v1",
 						"analyze",
 						"async",
-						"081facd6-5b7b-4bdc-9a53-585135da195b"
+						"d1b807d9-8bc5-48d1-9051-a14f46c931b2"
 					],
 					"query": [
 						{

@@ -1,0 +1,125 @@
+definitions:
+  model.AnalysisResult:
+    properties:
+      headings:
+        additionalProperties:
+          type: integer
+        type: object
+      html_version:
+        type: string
+      links:
+        additionalProperties:
+          type: integer
+        type: object
+      login_form_found:
+        type: boolean
+      title:
+        type: string
+    type: object
+  model.AnalyzeRequest:
+    properties:
+      url:
+        type: string
+    required:
+    - url
+    type: object
+  model.Job:
+    properties:
+      created_at:
+        type: string
+      error:
+        type: string
+      job_id:
+        type: string
+      result:
+        $ref: '#/definitions/model.AnalysisResult'
+      status:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /v1/analyze:
+    post:
+      consumes:
+      - application/json
+      description: Analyze a webpage synchronously
+      parameters:
+      - description: URL AnalyzeRequest
+        in: body
+        name: url
+        required: true
+        schema:
+          $ref: '#/definitions/model.AnalyzeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.AnalysisResult'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Analyze a webpage
+      tags:
+      - analysis
+  /v1/analyze/async:
+    post:
+      consumes:
+      - application/json
+      description: Submits a URL for analysis and returns a job ID to poll the result
+        later.
+      parameters:
+      - description: URL to be analyzed
+        in: body
+        name: url
+        required: true
+        schema:
+          $ref: '#/definitions/model.AnalyzeRequest'
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Accepted
+          schema:
+            $ref: '#/definitions/model.Job'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Analyze a webpage asynchronously
+      tags:
+      - analysis
+  /v1/analyze/async/{id}:
+    get:
+      description: Fetch the result of an async analysis job using the provided job
+        ID.
+      parameters:
+      - description: Job ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Job'
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Get analysis result by job ID
+      tags:
+      - analysis
+swagger: "2.0"
