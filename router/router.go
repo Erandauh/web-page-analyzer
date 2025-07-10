@@ -3,8 +3,8 @@ package router
 // # Route definitions
 
 import (
-	api "web-page-analyzer/api/controller"
 	_ "web-page-analyzer/docs"
+	api "web-page-analyzer/internal/api"
 	"web-page-analyzer/middleware"
 
 	"github.com/gin-gonic/gin"
@@ -12,7 +12,7 @@ import (
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
-func SetupRouter() *gin.Engine {
+func SetupRouter(api *api.AnalyzerController) *gin.Engine {
 	router := gin.Default()
 
 	// Register middleware

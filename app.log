@@ -1,0 +1,558 @@
+time="2025-07-10T05:02:50+05:30" level=info msg="Starting server..."
+time="2025-07-10T05:03:10+05:30" level=info msg="Handled request" client_ip="::1" duration="761.2µs" method=OPTIONS path=/v1/analyze/async status=204 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:03:10+05:30" level=info msg="Starting async analysis" url="https://alem.lk/welcome"
+time="2025-07-10T05:03:10+05:30" level=info msg="Job created" job_id=b9c86948-8c6c-4e3f-9df1-23b726a54a92 url="https://alem.lk/welcome"
+time="2025-07-10T05:03:10+05:30" level=info msg="Running analysis" job_id=b9c86948-8c6c-4e3f-9df1-23b726a54a92 url="https://alem.lk/welcome"
+time="2025-07-10T05:03:10+05:30" level=info msg="Handled request" client_ip="::1" duration=1.5265ms method=POST path=/v1/analyze/async status=202 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:03:12+05:30" level=info msg="Parsed URL successfully" parsed_url="https://alem.lk/welcome" url="https://alem.lk/welcome"
+time="2025-07-10T05:03:12+05:30" level=info msg="Executing analysis patterns..." url="https://alem.lk/welcome"
+time="2025-07-10T05:03:12+05:30" level=info msg="Executing pattern" pattern=headings
+time="2025-07-10T05:03:12+05:30" level=info msg="Starting heading count" pattern=headings url="https://alem.lk/welcome"
+time="2025-07-10T05:03:12+05:30" level=info msg="Heading count completed" pattern=headings result="map[h1:0 h2:0 h3:0 h4:0 h5:1 h6:0]"
+time="2025-07-10T05:03:12+05:30" level=info msg="Pattern executed successfully" elapsed="657.1µs" pattern=headings
+time="2025-07-10T05:03:12+05:30" level=info msg="Executing pattern" pattern=html_version
+time="2025-07-10T05:03:12+05:30" level=info msg="Starting HTML version detection" pattern=html_version url="https://alem.lk/welcome"
+time="2025-07-10T05:03:12+05:30" level=info msg="Detected HTML5" pattern=html_version
+time="2025-07-10T05:03:12+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=html_version
+time="2025-07-10T05:03:12+05:30" level=info msg="Executing pattern" pattern=links
+time="2025-07-10T05:03:12+05:30" level=info msg="Starting link analysis" pattern=links url="https://alem.lk/welcome"
+time="2025-07-10T05:03:12+05:30" level=warning msg="[%s] No HTTP client provided. Using default with 5s timeoutlinks"
+time="2025-07-10T05:03:12+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/b9c86948-8c6c-4e3f-9df1-23b726a54a92 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:03:13+05:30" level=info msg="Link analysis complete" broken=0 external=0 internal=1 total=1
+time="2025-07-10T05:03:13+05:30" level=info msg="Pattern executed successfully" elapsed=1.2510637s pattern=links
+time="2025-07-10T05:03:13+05:30" level=info msg="Executing pattern" pattern=login_form_found
+time="2025-07-10T05:03:13+05:30" level=info msg="Starting login form detection" pattern=login_form_found url="https://alem.lk/welcome"
+time="2025-07-10T05:03:13+05:30" level=info msg="Login form candidate found" has_email_user=true has_password=true has_submit=true is_post=true
+time="2025-07-10T05:03:13+05:30" level=info msg="Login forms detected" count=1
+time="2025-07-10T05:03:13+05:30" level=info msg="Login detection result" login_detected=true
+time="2025-07-10T05:03:13+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=login_form_found
+time="2025-07-10T05:03:13+05:30" level=info msg="Pattern execution completed" url="https://alem.lk/welcome"
+time="2025-07-10T05:03:13+05:30" level=info msg="Finished analysis for URL" url="https://alem.lk/welcome"
+time="2025-07-10T05:03:13+05:30" level=info msg="AnalysisResult constructed" url="https://alem.lk/welcome"
+time="2025-07-10T05:03:13+05:30" level=info msg="Analysis completed successfully" job_id=b9c86948-8c6c-4e3f-9df1-23b726a54a92 url="https://alem.lk/welcome"
+time="2025-07-10T05:03:14+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/b9c86948-8c6c-4e3f-9df1-23b726a54a92 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:17:17+05:30" level=info msg="Starting server..."
+time="2025-07-10T05:17:28+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=OPTIONS path=/v1/analyze/async status=204 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:17:28+05:30" level=info msg="Starting async analysis" url="https://alem.lk/welcome"
+time="2025-07-10T05:17:28+05:30" level=info msg="Job created" job_id=74a70e03-a98d-4f04-b757-bd296b9718b2 url="https://alem.lk/welcome"
+time="2025-07-10T05:17:28+05:30" level=info msg="Running analysis" job_id=74a70e03-a98d-4f04-b757-bd296b9718b2 url="https://alem.lk/welcome"
+time="2025-07-10T05:17:28+05:30" level=info msg="Handled request" client_ip="::1" duration=8.4639ms method=POST path=/v1/analyze/async status=202 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:17:30+05:30" level=info msg="Parsed URL successfully" parsed_url="https://alem.lk/welcome" url="https://alem.lk/welcome"
+time="2025-07-10T05:17:30+05:30" level=info msg="Executing analysis patterns..." url="https://alem.lk/welcome"
+time="2025-07-10T05:17:30+05:30" level=info msg="Executing pattern" pattern=headings
+time="2025-07-10T05:17:30+05:30" level=info msg="Starting heading count" pattern=headings url="https://alem.lk/welcome"
+time="2025-07-10T05:17:30+05:30" level=info msg="Heading count completed" pattern=headings result="map[h1:0 h2:0 h3:0 h4:0 h5:1 h6:0]"
+time="2025-07-10T05:17:30+05:30" level=info msg="Pattern executed successfully" elapsed=3.3517ms pattern=headings
+time="2025-07-10T05:17:30+05:30" level=info msg="Executing pattern" pattern=html_version
+time="2025-07-10T05:17:30+05:30" level=info msg="Starting HTML version detection" pattern=html_version url="https://alem.lk/welcome"
+time="2025-07-10T05:17:30+05:30" level=info msg="Detected HTML5" pattern=html_version
+time="2025-07-10T05:17:30+05:30" level=info msg="Pattern executed successfully" elapsed="521.6µs" pattern=html_version
+time="2025-07-10T05:17:30+05:30" level=info msg="Executing pattern" pattern=links
+time="2025-07-10T05:17:30+05:30" level=info msg="Starting link analysis" pattern=links url="https://alem.lk/welcome"
+time="2025-07-10T05:17:30+05:30" level=warning msg="[%s] No HTTP client provided. Using default with 5s timeoutlinks"
+time="2025-07-10T05:17:30+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/74a70e03-a98d-4f04-b757-bd296b9718b2 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:17:31+05:30" level=info msg="Link analysis complete" broken=0 external=0 internal=1 total=1
+time="2025-07-10T05:17:31+05:30" level=info msg="Pattern executed successfully" elapsed=1.2399024s pattern=links
+time="2025-07-10T05:17:31+05:30" level=info msg="Executing pattern" pattern=login_form_found
+time="2025-07-10T05:17:31+05:30" level=info msg="Starting login form detection" pattern=login_form_found url="https://alem.lk/welcome"
+time="2025-07-10T05:17:31+05:30" level=info msg="Login form candidate found" has_email_user=true has_password=true has_submit=true is_post=true
+time="2025-07-10T05:17:31+05:30" level=info msg="Login forms detected" count=1
+time="2025-07-10T05:17:31+05:30" level=info msg="Login detection result" login_detected=true
+time="2025-07-10T05:17:31+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=login_form_found
+time="2025-07-10T05:17:31+05:30" level=info msg="Pattern execution completed" url="https://alem.lk/welcome"
+time="2025-07-10T05:17:31+05:30" level=info msg="Finished analysis for URL" url="https://alem.lk/welcome"
+time="2025-07-10T05:17:31+05:30" level=info msg="AnalysisResult constructed" url="https://alem.lk/welcome"
+time="2025-07-10T05:17:31+05:30" level=info msg="Analysis completed successfully" job_id=74a70e03-a98d-4f04-b757-bd296b9718b2 url="https://alem.lk/welcome"
+time="2025-07-10T05:17:32+05:30" level=info msg="Handled request" client_ip="::1" duration="362.5µs" method=GET path=/v1/analyze/async/74a70e03-a98d-4f04-b757-bd296b9718b2 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:17:45+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=OPTIONS path=/v1/analyze/async status=204 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:17:45+05:30" level=info msg="Starting async analysis" url="https://www.tesla.com/"
+time="2025-07-10T05:17:45+05:30" level=info msg="Job created" job_id=6b6c66ef-6c9c-4218-b453-5329d964d0e3 url="https://www.tesla.com/"
+time="2025-07-10T05:17:45+05:30" level=info msg="Running analysis" job_id=6b6c66ef-6c9c-4218-b453-5329d964d0e3 url="https://www.tesla.com/"
+time="2025-07-10T05:17:45+05:30" level=info msg="Handled request" client_ip="::1" duration=1.5671ms method=POST path=/v1/analyze/async status=202 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:17:47+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/6b6c66ef-6c9c-4218-b453-5329d964d0e3 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:17:48+05:30" level=error msg="Failed to fetch URL" error="Get \"https://www.tesla.com/\": stream error: stream ID 1; INTERNAL_ERROR; received from peer" url="https://www.tesla.com/"
+time="2025-07-10T05:17:48+05:30" level=warning msg="Analysis failed" error="Get \"https://www.tesla.com/\": stream error: stream ID 1; INTERNAL_ERROR; received from peer" job_id=6b6c66ef-6c9c-4218-b453-5329d964d0e3 url="https://www.tesla.com/"
+time="2025-07-10T05:17:49+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/6b6c66ef-6c9c-4218-b453-5329d964d0e3 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:33:31+05:30" level=info msg="Handled request" client_ip="::1" duration=1.6013ms method=OPTIONS path=/v1/analyze/async status=204 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:33:31+05:30" level=info msg="Starting async analysis" url="https://www.tesla.com/"
+time="2025-07-10T05:33:31+05:30" level=info msg="Job created" job_id=1166f113-654d-44d1-8fe0-0ba04d6d6edb url="https://www.tesla.com/"
+time="2025-07-10T05:33:31+05:30" level=info msg="Running analysis" job_id=1166f113-654d-44d1-8fe0-0ba04d6d6edb url="https://www.tesla.com/"
+time="2025-07-10T05:33:31+05:30" level=info msg="Handled request" client_ip="::1" duration=5.0967ms method=POST path=/v1/analyze/async status=202 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:33:32+05:30" level=error msg="Failed to fetch URL" error="Get \"https://www.tesla.com/\": stream error: stream ID 1; INTERNAL_ERROR; received from peer" url="https://www.tesla.com/"
+time="2025-07-10T05:33:32+05:30" level=warning msg="Analysis failed" error="Get \"https://www.tesla.com/\": stream error: stream ID 1; INTERNAL_ERROR; received from peer" job_id=1166f113-654d-44d1-8fe0-0ba04d6d6edb url="https://www.tesla.com/"
+time="2025-07-10T05:33:33+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/1166f113-654d-44d1-8fe0-0ba04d6d6edb status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:34:47+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=OPTIONS path=/v1/analyze/async status=204 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:34:47+05:30" level=info msg="Starting async analysis" url="https://alem.lk/welcome"
+time="2025-07-10T05:34:47+05:30" level=info msg="Job created" job_id=430e97c7-69a9-457b-8d38-7ee1c26f359d url="https://alem.lk/welcome"
+time="2025-07-10T05:34:47+05:30" level=info msg="Running analysis" job_id=430e97c7-69a9-457b-8d38-7ee1c26f359d url="https://alem.lk/welcome"
+time="2025-07-10T05:34:47+05:30" level=info msg="Handled request" client_ip="::1" duration="547.9µs" method=POST path=/v1/analyze/async status=202 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:34:49+05:30" level=info msg="Parsed URL successfully" parsed_url="https://alem.lk/welcome" url="https://alem.lk/welcome"
+time="2025-07-10T05:34:49+05:30" level=info msg="Executing analysis patterns..." url="https://alem.lk/welcome"
+time="2025-07-10T05:34:49+05:30" level=info msg="Executing pattern" pattern=headings
+time="2025-07-10T05:34:49+05:30" level=info msg="Starting heading count" pattern=headings url="https://alem.lk/welcome"
+time="2025-07-10T05:34:49+05:30" level=info msg="Heading count completed" pattern=headings result="map[h1:0 h2:0 h3:0 h4:0 h5:1 h6:0]"
+time="2025-07-10T05:34:49+05:30" level=info msg="Pattern executed successfully" elapsed=2.252ms pattern=headings
+time="2025-07-10T05:34:49+05:30" level=info msg="Executing pattern" pattern=html_version
+time="2025-07-10T05:34:49+05:30" level=info msg="Starting HTML version detection" pattern=html_version url="https://alem.lk/welcome"
+time="2025-07-10T05:34:49+05:30" level=info msg="Detected HTML5" pattern=html_version
+time="2025-07-10T05:34:49+05:30" level=info msg="Pattern executed successfully" elapsed="527.4µs" pattern=html_version
+time="2025-07-10T05:34:49+05:30" level=info msg="Executing pattern" pattern=links
+time="2025-07-10T05:34:49+05:30" level=info msg="Starting link analysis" pattern=links url="https://alem.lk/welcome"
+time="2025-07-10T05:34:49+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/430e97c7-69a9-457b-8d38-7ee1c26f359d status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:34:50+05:30" level=info msg="Link analysis complete" broken=0 external=0 internal=1 total=1
+time="2025-07-10T05:34:50+05:30" level=info msg="Pattern executed successfully" elapsed=1.243094s pattern=links
+time="2025-07-10T05:34:50+05:30" level=info msg="Executing pattern" pattern=login_form_found
+time="2025-07-10T05:34:50+05:30" level=info msg="Starting login form detection" pattern=login_form_found url="https://alem.lk/welcome"
+time="2025-07-10T05:34:50+05:30" level=info msg="Login form candidate found" has_email_user=true has_password=true has_submit=true is_post=true
+time="2025-07-10T05:34:50+05:30" level=info msg="Login forms detected" count=1
+time="2025-07-10T05:34:50+05:30" level=info msg="Login detection result" login_detected=true
+time="2025-07-10T05:34:50+05:30" level=info msg="Pattern executed successfully" elapsed="531.1µs" pattern=login_form_found
+time="2025-07-10T05:34:50+05:30" level=info msg="Pattern execution completed" url="https://alem.lk/welcome"
+time="2025-07-10T05:34:50+05:30" level=info msg="Finished analysis for URL" url="https://alem.lk/welcome"
+time="2025-07-10T05:34:50+05:30" level=info msg="AnalysisResult constructed" url="https://alem.lk/welcome"
+time="2025-07-10T05:34:50+05:30" level=info msg="Analysis completed successfully" job_id=430e97c7-69a9-457b-8d38-7ee1c26f359d url="https://alem.lk/welcome"
+time="2025-07-10T05:34:51+05:30" level=info msg="Handled request" client_ip="::1" duration=2.4542ms method=GET path=/v1/analyze/async/430e97c7-69a9-457b-8d38-7ee1c26f359d status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:36:16+05:30" level=info msg="Handled request" client_ip="::1" duration=4.8652ms method=OPTIONS path=/v1/analyze/async status=204 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:36:16+05:30" level=info msg="Starting async analysis" url="https://www.tesla.com/"
+time="2025-07-10T05:36:16+05:30" level=info msg="Job created" job_id=2291ff9a-1a4a-4693-bfdd-aaaa2df64b71 url="https://www.tesla.com/"
+time="2025-07-10T05:36:16+05:30" level=info msg="Handled request" client_ip="::1" duration=1.1311ms method=POST path=/v1/analyze/async status=202 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T05:36:16+05:30" level=info msg="Running analysis" job_id=2291ff9a-1a4a-4693-bfdd-aaaa2df64b71 url="https://www.tesla.com/"
+time="2025-07-10T05:36:16+05:30" level=error msg="Failed to fetch URL" error="Get \"https://www.tesla.com/\": stream error: stream ID 1; INTERNAL_ERROR; received from peer" url="https://www.tesla.com/"
+time="2025-07-10T05:36:16+05:30" level=warning msg="Analysis failed" error="Get \"https://www.tesla.com/\": stream error: stream ID 1; INTERNAL_ERROR; received from peer" job_id=2291ff9a-1a4a-4693-bfdd-aaaa2df64b71 url="https://www.tesla.com/"
+time="2025-07-10T05:36:18+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/2291ff9a-1a4a-4693-bfdd-aaaa2df64b71 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T10:48:24+05:30" level=info msg="Starting server..."
+time="2025-07-10T10:48:32+05:30" level=info msg="Handled request" client_ip="::1" duration="652.7µs" method=OPTIONS path=/v1/analyze/async status=204 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T10:48:32+05:30" level=info msg="Starting async analysis" url="https://alem.lk/welcome"
+time="2025-07-10T10:48:32+05:30" level=info msg="Job created" job_id=01150651-2418-44f0-bfe7-84fd9003fc38 url="https://alem.lk/welcome"
+time="2025-07-10T10:48:32+05:30" level=info msg="Running analysis" job_id=01150651-2418-44f0-bfe7-84fd9003fc38 url="https://alem.lk/welcome"
+time="2025-07-10T10:48:32+05:30" level=info msg="Handled request" client_ip="::1" duration=1.316ms method=POST path=/v1/analyze/async status=202 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T10:48:34+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/01150651-2418-44f0-bfe7-84fd9003fc38 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T10:48:35+05:30" level=info msg="Parsed URL successfully" parsed_url="https://alem.lk/welcome" url="https://alem.lk/welcome"
+time="2025-07-10T10:48:35+05:30" level=info msg="Executing analysis patterns..." url="https://alem.lk/welcome"
+time="2025-07-10T10:48:35+05:30" level=info msg="Executing pattern" pattern=headings
+time="2025-07-10T10:48:35+05:30" level=info msg="Starting heading count" pattern=headings url="https://alem.lk/welcome"
+time="2025-07-10T10:48:35+05:30" level=info msg="Heading count completed" pattern=headings result="map[h1:0 h2:0 h3:0 h4:0 h5:1 h6:0]"
+time="2025-07-10T10:48:35+05:30" level=info msg="Pattern executed successfully" elapsed="639.1µs" pattern=headings
+time="2025-07-10T10:48:35+05:30" level=info msg="Executing pattern" pattern=html_version
+time="2025-07-10T10:48:35+05:30" level=info msg="Starting HTML version detection" pattern=html_version url="https://alem.lk/welcome"
+time="2025-07-10T10:48:35+05:30" level=info msg="Detected HTML5" pattern=html_version
+time="2025-07-10T10:48:35+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=html_version
+time="2025-07-10T10:48:35+05:30" level=info msg="Executing pattern" pattern=links
+time="2025-07-10T10:48:35+05:30" level=info msg="Starting link analysis" pattern=links url="https://alem.lk/welcome"
+time="2025-07-10T10:48:35+05:30" level=warning msg="[%s] No HTTP client provided. Using default with 5s timeoutlinks"
+time="2025-07-10T10:48:36+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/01150651-2418-44f0-bfe7-84fd9003fc38 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T10:48:36+05:30" level=info msg="Link analysis complete" broken=0 external=0 internal=1 total=1
+time="2025-07-10T10:48:36+05:30" level=info msg="Pattern executed successfully" elapsed=1.2781753s pattern=links
+time="2025-07-10T10:48:36+05:30" level=info msg="Executing pattern" pattern=login_form_found
+time="2025-07-10T10:48:36+05:30" level=info msg="Starting login form detection" pattern=login_form_found url="https://alem.lk/welcome"
+time="2025-07-10T10:48:36+05:30" level=info msg="Login form candidate found" has_email_user=true has_password=true has_submit=true is_post=true
+time="2025-07-10T10:48:36+05:30" level=info msg="Login forms detected" count=1
+time="2025-07-10T10:48:36+05:30" level=info msg="Login detection result" login_detected=true
+time="2025-07-10T10:48:36+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=login_form_found
+time="2025-07-10T10:48:36+05:30" level=info msg="Pattern execution completed" url="https://alem.lk/welcome"
+time="2025-07-10T10:48:36+05:30" level=info msg="Finished analysis for URL" url="https://alem.lk/welcome"
+time="2025-07-10T10:48:36+05:30" level=info msg="AnalysisResult constructed" url="https://alem.lk/welcome"
+time="2025-07-10T10:48:36+05:30" level=info msg="Analysis completed successfully" job_id=01150651-2418-44f0-bfe7-84fd9003fc38 url="https://alem.lk/welcome"
+time="2025-07-10T10:48:38+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/01150651-2418-44f0-bfe7-84fd9003fc38 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T10:48:43+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=OPTIONS path=/v1/analyze status=204 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T10:48:44+05:30" level=info msg="Parsed URL successfully" parsed_url="https://alem.lk/welcome" url="https://alem.lk/welcome"
+time="2025-07-10T10:48:44+05:30" level=info msg="Executing analysis patterns..." url="https://alem.lk/welcome"
+time="2025-07-10T10:48:44+05:30" level=info msg="Executing pattern" pattern=headings
+time="2025-07-10T10:48:44+05:30" level=info msg="Starting heading count" pattern=headings url="https://alem.lk/welcome"
+time="2025-07-10T10:48:44+05:30" level=info msg="Heading count completed" pattern=headings result="map[h1:0 h2:0 h3:0 h4:0 h5:1 h6:0]"
+time="2025-07-10T10:48:44+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=headings
+time="2025-07-10T10:48:44+05:30" level=info msg="Executing pattern" pattern=html_version
+time="2025-07-10T10:48:44+05:30" level=info msg="Starting HTML version detection" pattern=html_version url="https://alem.lk/welcome"
+time="2025-07-10T10:48:44+05:30" level=info msg="Detected HTML5" pattern=html_version
+time="2025-07-10T10:48:44+05:30" level=info msg="Pattern executed successfully" elapsed="523.8µs" pattern=html_version
+time="2025-07-10T10:48:44+05:30" level=info msg="Executing pattern" pattern=links
+time="2025-07-10T10:48:44+05:30" level=info msg="Starting link analysis" pattern=links url="https://alem.lk/welcome"
+time="2025-07-10T10:48:46+05:30" level=info msg="Link analysis complete" broken=0 external=0 internal=1 total=1
+time="2025-07-10T10:48:46+05:30" level=info msg="Pattern executed successfully" elapsed=1.2932398s pattern=links
+time="2025-07-10T10:48:46+05:30" level=info msg="Executing pattern" pattern=login_form_found
+time="2025-07-10T10:48:46+05:30" level=info msg="Starting login form detection" pattern=login_form_found url="https://alem.lk/welcome"
+time="2025-07-10T10:48:46+05:30" level=info msg="Login form candidate found" has_email_user=true has_password=true has_submit=true is_post=true
+time="2025-07-10T10:48:46+05:30" level=info msg="Login forms detected" count=1
+time="2025-07-10T10:48:46+05:30" level=info msg="Login detection result" login_detected=true
+time="2025-07-10T10:48:46+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=login_form_found
+time="2025-07-10T10:48:46+05:30" level=info msg="Pattern execution completed" url="https://alem.lk/welcome"
+time="2025-07-10T10:48:46+05:30" level=info msg="Finished analysis for URL" url="https://alem.lk/welcome"
+time="2025-07-10T10:48:46+05:30" level=info msg="AnalysisResult constructed" url="https://alem.lk/welcome"
+time="2025-07-10T10:48:46+05:30" level=info msg="Handled request" client_ip="::1" duration=2.6310789s method=POST path=/v1/analyze status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T10:57:48+05:30" level=info msg="Starting server..."
+time="2025-07-10T10:58:01+05:30" level=info msg="Handled request" client_ip="::1" duration=1.08ms method=GET path=/health status=200 user_agent=PostmanRuntime/7.44.1
+time="2025-07-10T10:58:08+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=OPTIONS path=/v1/analyze status=204 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T10:58:10+05:30" level=info msg="Parsed URL successfully" parsed_url="https://alem.lk/welcome" url="https://alem.lk/welcome"
+time="2025-07-10T10:58:10+05:30" level=info msg="Executing analysis patterns..." url="https://alem.lk/welcome"
+time="2025-07-10T10:58:10+05:30" level=info msg="Executing pattern" pattern=headings
+time="2025-07-10T10:58:10+05:30" level=info msg="Starting heading count" pattern=headings url="https://alem.lk/welcome"
+time="2025-07-10T10:58:10+05:30" level=info msg="Heading count completed" pattern=headings result="map[h1:0 h2:0 h3:0 h4:0 h5:1 h6:0]"
+time="2025-07-10T10:58:10+05:30" level=info msg="Pattern executed successfully" elapsed=1.5737ms pattern=headings
+time="2025-07-10T10:58:10+05:30" level=info msg="Executing pattern" pattern=html_version
+time="2025-07-10T10:58:10+05:30" level=info msg="Starting HTML version detection" pattern=html_version url="https://alem.lk/welcome"
+time="2025-07-10T10:58:10+05:30" level=info msg="Detected HTML5" pattern=html_version
+time="2025-07-10T10:58:10+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=html_version
+time="2025-07-10T10:58:10+05:30" level=info msg="Executing pattern" pattern=links
+time="2025-07-10T10:58:10+05:30" level=info msg="Starting link analysis" pattern=links url="https://alem.lk/welcome"
+time="2025-07-10T10:58:10+05:30" level=warning msg="[%s] No HTTP client provided. Using default with 5s timeoutlinks"
+time="2025-07-10T10:58:11+05:30" level=info msg="Link analysis complete" broken=0 external=0 internal=1 total=1
+time="2025-07-10T10:58:11+05:30" level=info msg="Pattern executed successfully" elapsed=1.2800808s pattern=links
+time="2025-07-10T10:58:11+05:30" level=info msg="Executing pattern" pattern=login_form_found
+time="2025-07-10T10:58:11+05:30" level=info msg="Starting login form detection" pattern=login_form_found url="https://alem.lk/welcome"
+time="2025-07-10T10:58:11+05:30" level=info msg="Login form candidate found" has_email_user=true has_password=true has_submit=true is_post=true
+time="2025-07-10T10:58:11+05:30" level=info msg="Login forms detected" count=1
+time="2025-07-10T10:58:11+05:30" level=info msg="Login detection result" login_detected=true
+time="2025-07-10T10:58:11+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=login_form_found
+time="2025-07-10T10:58:11+05:30" level=info msg="Pattern execution completed" url="https://alem.lk/welcome"
+time="2025-07-10T10:58:11+05:30" level=info msg="Finished analysis for URL" url="https://alem.lk/welcome"
+time="2025-07-10T10:58:11+05:30" level=info msg="AnalysisResult constructed" url="https://alem.lk/welcome"
+time="2025-07-10T10:58:11+05:30" level=info msg="Handled request" client_ip="::1" duration=3.3107702s method=POST path=/v1/analyze status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T10:58:13+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=OPTIONS path=/v1/analyze/async status=204 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T10:58:13+05:30" level=info msg="Starting async analysis" url="https://alem.lk/welcome"
+time="2025-07-10T10:58:13+05:30" level=info msg="Job created" job_id=8d7386d7-b360-4cfc-864d-cf682b58b866 url="https://alem.lk/welcome"
+time="2025-07-10T10:58:13+05:30" level=info msg="Running analysis" job_id=8d7386d7-b360-4cfc-864d-cf682b58b866 url="https://alem.lk/welcome"
+time="2025-07-10T10:58:13+05:30" level=info msg="Handled request" client_ip="::1" duration=1.5787ms method=POST path=/v1/analyze/async status=202 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T10:58:14+05:30" level=info msg="Parsed URL successfully" parsed_url="https://alem.lk/welcome" url="https://alem.lk/welcome"
+time="2025-07-10T10:58:14+05:30" level=info msg="Executing analysis patterns..." url="https://alem.lk/welcome"
+time="2025-07-10T10:58:14+05:30" level=info msg="Executing pattern" pattern=headings
+time="2025-07-10T10:58:14+05:30" level=info msg="Starting heading count" pattern=headings url="https://alem.lk/welcome"
+time="2025-07-10T10:58:14+05:30" level=info msg="Heading count completed" pattern=headings result="map[h1:0 h2:0 h3:0 h4:0 h5:1 h6:0]"
+time="2025-07-10T10:58:14+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=headings
+time="2025-07-10T10:58:14+05:30" level=info msg="Executing pattern" pattern=html_version
+time="2025-07-10T10:58:14+05:30" level=info msg="Starting HTML version detection" pattern=html_version url="https://alem.lk/welcome"
+time="2025-07-10T10:58:14+05:30" level=info msg="Detected HTML5" pattern=html_version
+time="2025-07-10T10:58:14+05:30" level=info msg="Pattern executed successfully" elapsed="503.6µs" pattern=html_version
+time="2025-07-10T10:58:14+05:30" level=info msg="Executing pattern" pattern=links
+time="2025-07-10T10:58:14+05:30" level=info msg="Starting link analysis" pattern=links url="https://alem.lk/welcome"
+time="2025-07-10T10:58:15+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/8d7386d7-b360-4cfc-864d-cf682b58b866 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T10:58:15+05:30" level=info msg="Link analysis complete" broken=0 external=0 internal=1 total=1
+time="2025-07-10T10:58:15+05:30" level=info msg="Pattern executed successfully" elapsed=1.2545542s pattern=links
+time="2025-07-10T10:58:15+05:30" level=info msg="Executing pattern" pattern=login_form_found
+time="2025-07-10T10:58:15+05:30" level=info msg="Starting login form detection" pattern=login_form_found url="https://alem.lk/welcome"
+time="2025-07-10T10:58:15+05:30" level=info msg="Login form candidate found" has_email_user=true has_password=true has_submit=true is_post=true
+time="2025-07-10T10:58:15+05:30" level=info msg="Login forms detected" count=1
+time="2025-07-10T10:58:15+05:30" level=info msg="Login detection result" login_detected=true
+time="2025-07-10T10:58:15+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=login_form_found
+time="2025-07-10T10:58:15+05:30" level=info msg="Pattern execution completed" url="https://alem.lk/welcome"
+time="2025-07-10T10:58:15+05:30" level=info msg="Finished analysis for URL" url="https://alem.lk/welcome"
+time="2025-07-10T10:58:15+05:30" level=info msg="AnalysisResult constructed" url="https://alem.lk/welcome"
+time="2025-07-10T10:58:15+05:30" level=info msg="Analysis completed successfully" job_id=8d7386d7-b360-4cfc-864d-cf682b58b866 url="https://alem.lk/welcome"
+time="2025-07-10T10:58:17+05:30" level=info msg="Handled request" client_ip="::1" duration="848.3µs" method=GET path=/v1/analyze/async/8d7386d7-b360-4cfc-864d-cf682b58b866 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T11:01:26+05:30" level=info msg="Starting server..."
+time="2025-07-10T11:01:31+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=OPTIONS path=/v1/analyze/async status=204 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T11:01:31+05:30" level=info msg="Starting async analysis" url="https://alem.lk/welcome"
+time="2025-07-10T11:01:31+05:30" level=info msg="Job created" job_id=8739fde7-b2dc-4b65-a42a-4aa05ef9a68c url="https://alem.lk/welcome"
+time="2025-07-10T11:01:31+05:30" level=info msg="Running analysis" job_id=8739fde7-b2dc-4b65-a42a-4aa05ef9a68c url="https://alem.lk/welcome"
+time="2025-07-10T11:01:31+05:30" level=info msg="Handled request" client_ip="::1" duration="672µs" method=POST path=/v1/analyze/async status=202 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T11:01:33+05:30" level=info msg="Parsed URL successfully" parsed_url="https://alem.lk/welcome" url="https://alem.lk/welcome"
+time="2025-07-10T11:01:33+05:30" level=info msg="Executing analysis patterns..." url="https://alem.lk/welcome"
+time="2025-07-10T11:01:33+05:30" level=info msg="Executing pattern" pattern=headings
+time="2025-07-10T11:01:33+05:30" level=info msg="Starting heading count" pattern=headings url="https://alem.lk/welcome"
+time="2025-07-10T11:01:33+05:30" level=info msg="Heading count completed" pattern=headings result="map[h1:0 h2:0 h3:0 h4:0 h5:1 h6:0]"
+time="2025-07-10T11:01:33+05:30" level=info msg="Pattern executed successfully" elapsed=1.4054ms pattern=headings
+time="2025-07-10T11:01:33+05:30" level=info msg="Executing pattern" pattern=html_version
+time="2025-07-10T11:01:33+05:30" level=info msg="Starting HTML version detection" pattern=html_version url="https://alem.lk/welcome"
+time="2025-07-10T11:01:33+05:30" level=info msg="Detected HTML5" pattern=html_version
+time="2025-07-10T11:01:33+05:30" level=info msg="Pattern executed successfully" elapsed="996.7µs" pattern=html_version
+time="2025-07-10T11:01:33+05:30" level=info msg="Executing pattern" pattern=links
+time="2025-07-10T11:01:33+05:30" level=info msg="Starting link analysis" pattern=links url="https://alem.lk/welcome"
+time="2025-07-10T11:01:33+05:30" level=warning msg="[%s] No HTTP client provided. Using default with 5s timeoutlinks"
+time="2025-07-10T11:01:33+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/8739fde7-b2dc-4b65-a42a-4aa05ef9a68c status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T11:01:35+05:30" level=info msg="Link analysis complete" broken=0 external=0 internal=1 total=1
+time="2025-07-10T11:01:35+05:30" level=info msg="Pattern executed successfully" elapsed=1.2641712s pattern=links
+time="2025-07-10T11:01:35+05:30" level=info msg="Executing pattern" pattern=login_form_found
+time="2025-07-10T11:01:35+05:30" level=info msg="Starting login form detection" pattern=login_form_found url="https://alem.lk/welcome"
+time="2025-07-10T11:01:35+05:30" level=info msg="Login form candidate found" has_email_user=true has_password=true has_submit=true is_post=true
+time="2025-07-10T11:01:35+05:30" level=info msg="Login forms detected" count=1
+time="2025-07-10T11:01:35+05:30" level=info msg="Login detection result" login_detected=true
+time="2025-07-10T11:01:35+05:30" level=info msg="Pattern executed successfully" elapsed="601.5µs" pattern=login_form_found
+time="2025-07-10T11:01:35+05:30" level=info msg="Pattern execution completed" url="https://alem.lk/welcome"
+time="2025-07-10T11:01:35+05:30" level=info msg="Finished analysis for URL" url="https://alem.lk/welcome"
+time="2025-07-10T11:01:35+05:30" level=info msg="AnalysisResult constructed" url="https://alem.lk/welcome"
+time="2025-07-10T11:01:35+05:30" level=info msg="Analysis completed successfully" job_id=8739fde7-b2dc-4b65-a42a-4aa05ef9a68c url="https://alem.lk/welcome"
+time="2025-07-10T11:01:35+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/8739fde7-b2dc-4b65-a42a-4aa05ef9a68c status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T11:03:35+05:30" level=info msg="Starting server..."
+time="2025-07-10T11:03:37+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=OPTIONS path=/v1/analyze/async status=204 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T11:03:37+05:30" level=info msg="Starting async analysis" url="https://alem.lk/welcome"
+time="2025-07-10T11:03:37+05:30" level=info msg="Job created" job_id=86b0db33-b9d3-4b5b-aa3b-b26d0daef71f url="https://alem.lk/welcome"
+time="2025-07-10T11:03:37+05:30" level=info msg="Running analysis" job_id=86b0db33-b9d3-4b5b-aa3b-b26d0daef71f url="https://alem.lk/welcome"
+time="2025-07-10T11:03:37+05:30" level=info msg="Handled request" client_ip="::1" duration="764.7µs" method=POST path=/v1/analyze/async status=202 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T11:03:39+05:30" level=info msg="Parsed URL successfully" parsed_url="https://alem.lk/welcome" url="https://alem.lk/welcome"
+time="2025-07-10T11:03:39+05:30" level=info msg="Executing analysis patterns..." url="https://alem.lk/welcome"
+time="2025-07-10T11:03:39+05:30" level=info msg="Executing pattern" pattern=headings
+time="2025-07-10T11:03:39+05:30" level=info msg="Starting heading count" pattern=headings url="https://alem.lk/welcome"
+time="2025-07-10T11:03:39+05:30" level=info msg="Heading count completed" pattern=headings result="map[h1:0 h2:0 h3:0 h4:0 h5:1 h6:0]"
+time="2025-07-10T11:03:39+05:30" level=info msg="Pattern executed successfully" elapsed="557.2µs" pattern=headings
+time="2025-07-10T11:03:39+05:30" level=info msg="Executing pattern" pattern=html_version
+time="2025-07-10T11:03:39+05:30" level=info msg="Starting HTML version detection" pattern=html_version url="https://alem.lk/welcome"
+time="2025-07-10T11:03:39+05:30" level=info msg="Detected HTML5" pattern=html_version
+time="2025-07-10T11:03:39+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=html_version
+time="2025-07-10T11:03:39+05:30" level=info msg="Executing pattern" pattern=links
+time="2025-07-10T11:03:39+05:30" level=info msg="Starting link analysis" pattern=links url="https://alem.lk/welcome"
+time="2025-07-10T11:03:39+05:30" level=warning msg="[%s] No HTTP client provided. Using default with 5s timeoutlinks"
+time="2025-07-10T11:03:39+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/86b0db33-b9d3-4b5b-aa3b-b26d0daef71f status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T11:03:41+05:30" level=info msg="Link analysis complete" broken=0 external=0 internal=1 total=1
+time="2025-07-10T11:03:41+05:30" level=info msg="Pattern executed successfully" elapsed=1.3231705s pattern=links
+time="2025-07-10T11:03:41+05:30" level=info msg="Executing pattern" pattern=login_form_found
+time="2025-07-10T11:03:41+05:30" level=info msg="Starting login form detection" pattern=login_form_found url="https://alem.lk/welcome"
+time="2025-07-10T11:03:41+05:30" level=info msg="Login form candidate found" has_email_user=true has_password=true has_submit=true is_post=true
+time="2025-07-10T11:03:41+05:30" level=info msg="Login forms detected" count=1
+time="2025-07-10T11:03:41+05:30" level=info msg="Login detection result" login_detected=true
+time="2025-07-10T11:03:41+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=login_form_found
+time="2025-07-10T11:03:41+05:30" level=info msg="Pattern execution completed" url="https://alem.lk/welcome"
+time="2025-07-10T11:03:41+05:30" level=info msg="Finished analysis for URL" url="https://alem.lk/welcome"
+time="2025-07-10T11:03:41+05:30" level=info msg="AnalysisResult constructed" url="https://alem.lk/welcome"
+time="2025-07-10T11:03:41+05:30" level=info msg="Analysis completed successfully" job_id=86b0db33-b9d3-4b5b-aa3b-b26d0daef71f url="https://alem.lk/welcome"
+time="2025-07-10T11:03:41+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/86b0db33-b9d3-4b5b-aa3b-b26d0daef71f status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T11:18:03+05:30" level=info msg="Starting server..."
+time="2025-07-10T11:18:09+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=OPTIONS path=/v1/analyze/async status=204 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T11:18:09+05:30" level=info msg="Starting async analysis" url="https://alem.lk/welcome"
+time="2025-07-10T11:18:09+05:30" level=info msg="Job created" job_id=538f6918-242a-4f6f-87d3-0baa1673724f url="https://alem.lk/welcome"
+time="2025-07-10T11:18:09+05:30" level=info msg="Running analysis" job_id=538f6918-242a-4f6f-87d3-0baa1673724f url="https://alem.lk/welcome"
+time="2025-07-10T11:18:09+05:30" level=info msg="Handled request" client_ip="::1" duration=1.3656ms method=POST path=/v1/analyze/async status=202 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T11:18:11+05:30" level=info msg="Parsed URL successfully" parsed_url="https://alem.lk/welcome" url="https://alem.lk/welcome"
+time="2025-07-10T11:18:11+05:30" level=info msg="Executing analysis patterns..." url="https://alem.lk/welcome"
+time="2025-07-10T11:18:11+05:30" level=info msg="Executing pattern" pattern=headings
+time="2025-07-10T11:18:11+05:30" level=info msg="Starting heading count" pattern=headings url="https://alem.lk/welcome"
+time="2025-07-10T11:18:11+05:30" level=info msg="Heading count completed" pattern=headings result="map[h1:0 h2:0 h3:0 h4:0 h5:1 h6:0]"
+time="2025-07-10T11:18:11+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=headings
+time="2025-07-10T11:18:11+05:30" level=info msg="Executing pattern" pattern=html_version
+time="2025-07-10T11:18:11+05:30" level=info msg="Starting HTML version detection" pattern=html_version url="https://alem.lk/welcome"
+time="2025-07-10T11:18:11+05:30" level=info msg="Detected HTML5" pattern=html_version
+time="2025-07-10T11:18:11+05:30" level=info msg="Pattern executed successfully" elapsed="640.2µs" pattern=html_version
+time="2025-07-10T11:18:11+05:30" level=info msg="Executing pattern" pattern=links
+time="2025-07-10T11:18:11+05:30" level=info msg="Starting link analysis" pattern=links url="https://alem.lk/welcome"
+time="2025-07-10T11:18:11+05:30" level=warning msg="[links] No HTTP client provided. Using default with 5s timeout"
+time="2025-07-10T11:18:11+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/538f6918-242a-4f6f-87d3-0baa1673724f status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T11:18:12+05:30" level=info msg="Link analysis complete" broken=0 external=0 internal=1 total=1
+time="2025-07-10T11:18:12+05:30" level=info msg="Pattern executed successfully" elapsed=1.3038093s pattern=links
+time="2025-07-10T11:18:12+05:30" level=info msg="Executing pattern" pattern=login_form_found
+time="2025-07-10T11:18:12+05:30" level=info msg="Starting login form detection" pattern=login_form_found url="https://alem.lk/welcome"
+time="2025-07-10T11:18:12+05:30" level=info msg="Login form candidate found" has_email_user=true has_password=true has_submit=true is_post=true
+time="2025-07-10T11:18:12+05:30" level=info msg="Login forms detected" count=1
+time="2025-07-10T11:18:12+05:30" level=info msg="Login detection result" login_detected=true
+time="2025-07-10T11:18:12+05:30" level=info msg="Pattern executed successfully" elapsed="552.7µs" pattern=login_form_found
+time="2025-07-10T11:18:12+05:30" level=info msg="Pattern execution completed" url="https://alem.lk/welcome"
+time="2025-07-10T11:18:12+05:30" level=info msg="Finished analysis for URL" url="https://alem.lk/welcome"
+time="2025-07-10T11:18:12+05:30" level=info msg="AnalysisResult constructed" url="https://alem.lk/welcome"
+time="2025-07-10T11:18:12+05:30" level=info msg="Analysis completed successfully" job_id=538f6918-242a-4f6f-87d3-0baa1673724f url="https://alem.lk/welcome"
+time="2025-07-10T11:18:13+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/538f6918-242a-4f6f-87d3-0baa1673724f status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T12:02:27+05:30" level=info msg="Starting server..."
+time="2025-07-10T12:02:33+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=OPTIONS path=/v1/analyze/async status=204 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T12:02:33+05:30" level=info msg="Starting async analysis" url="https://alem.lk/welcome"
+time="2025-07-10T12:02:33+05:30" level=info msg="Job created" job_id=1dfaaf95-6086-49dc-a3ca-6280694ffc90 url="https://alem.lk/welcome"
+time="2025-07-10T12:02:33+05:30" level=info msg="Running analysis" job_id=1dfaaf95-6086-49dc-a3ca-6280694ffc90 url="https://alem.lk/welcome"
+time="2025-07-10T12:02:33+05:30" level=info msg="Handled request" client_ip="::1" duration=1.6504ms method=POST path=/v1/analyze/async status=202 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T12:02:35+05:30" level=info msg="Handled request" client_ip="::1" duration="957.2µs" method=GET path=/v1/analyze/async/1dfaaf95-6086-49dc-a3ca-6280694ffc90 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T12:02:35+05:30" level=info msg="Parsed URL successfully" parsed_url="https://alem.lk/welcome" url="https://alem.lk/welcome"
+time="2025-07-10T12:02:35+05:30" level=info msg="Executing analysis patterns..." url="https://alem.lk/welcome"
+time="2025-07-10T12:02:35+05:30" level=info msg="Executing pattern" pattern=headings
+time="2025-07-10T12:02:35+05:30" level=info msg="Starting heading count" pattern=headings url="https://alem.lk/welcome"
+time="2025-07-10T12:02:35+05:30" level=info msg="Heading count completed" pattern=headings result="map[h1:0 h2:0 h3:0 h4:0 h5:1 h6:0]"
+time="2025-07-10T12:02:35+05:30" level=info msg="Pattern executed successfully" elapsed="577.9µs" pattern=headings
+time="2025-07-10T12:02:35+05:30" level=info msg="Executing pattern" pattern=html_version
+time="2025-07-10T12:02:35+05:30" level=info msg="Starting HTML version detection" pattern=html_version url="https://alem.lk/welcome"
+time="2025-07-10T12:02:35+05:30" level=info msg="Detected HTML5" pattern=html_version
+time="2025-07-10T12:02:35+05:30" level=info msg="Pattern executed successfully" elapsed=3.5939ms pattern=html_version
+time="2025-07-10T12:02:35+05:30" level=info msg="Executing pattern" pattern=links
+time="2025-07-10T12:02:35+05:30" level=info msg="Starting link analysis" pattern=links url="https://alem.lk/welcome"
+time="2025-07-10T12:02:35+05:30" level=warning msg="[links] No HTTP client provided. Using default with 5s timeout"
+time="2025-07-10T12:02:36+05:30" level=info msg="Link analysis complete" broken=0 external=0 internal=1 total=1
+time="2025-07-10T12:02:36+05:30" level=info msg="Pattern executed successfully" elapsed=1.2840453s pattern=links
+time="2025-07-10T12:02:36+05:30" level=info msg="Executing pattern" pattern=login_form_found
+time="2025-07-10T12:02:36+05:30" level=info msg="Starting login form detection" pattern=login_form_found url="https://alem.lk/welcome"
+time="2025-07-10T12:02:36+05:30" level=info msg="Login form candidate found" has_email_user=true has_password=true has_submit=true is_post=true
+time="2025-07-10T12:02:36+05:30" level=info msg="Login forms detected" count=1
+time="2025-07-10T12:02:36+05:30" level=info msg="Login detection result" login_detected=true
+time="2025-07-10T12:02:36+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=login_form_found
+time="2025-07-10T12:02:36+05:30" level=info msg="Pattern execution completed" url="https://alem.lk/welcome"
+time="2025-07-10T12:02:36+05:30" level=info msg="Finished analysis for URL" url="https://alem.lk/welcome"
+time="2025-07-10T12:02:36+05:30" level=info msg="AnalysisResult constructed" url="https://alem.lk/welcome"
+time="2025-07-10T12:02:36+05:30" level=info msg="Analysis completed successfully" job_id=1dfaaf95-6086-49dc-a3ca-6280694ffc90 url="https://alem.lk/welcome"
+time="2025-07-10T12:02:37+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/1dfaaf95-6086-49dc-a3ca-6280694ffc90 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:32:22+05:30" level=info msg="Starting server..."
+time="2025-07-10T13:32:22+05:30" level=info msg="Initializing InMemoryStore"
+time="2025-07-10T13:32:32+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=OPTIONS path=/v1/analyze/async status=204 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:32:32+05:30" level=info msg="Starting async analysis" url="https://alem.lk/welcome"
+time="2025-07-10T13:32:32+05:30" level=info msg="Created new job" job_id=04f5c885-edce-4a04-a761-7bbac03af085 url="https://alem.lk/welcome"
+time="2025-07-10T13:32:32+05:30" level=info msg="Job created" job_id=04f5c885-edce-4a04-a761-7bbac03af085 url="https://alem.lk/welcome"
+time="2025-07-10T13:32:32+05:30" level=info msg="Running analysis" job_id=04f5c885-edce-4a04-a761-7bbac03af085 url="https://alem.lk/welcome"
+time="2025-07-10T13:32:32+05:30" level=info msg="Handled request" client_ip="::1" duration=2.8998ms method=POST path=/v1/analyze/async status=202 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:32:34+05:30" level=info msg="Job retrieved from store" job_id=04f5c885-edce-4a04-a761-7bbac03af085
+time="2025-07-10T13:32:34+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/04f5c885-edce-4a04-a761-7bbac03af085 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:32:34+05:30" level=info msg="Parsed URL successfully" parsed_url="https://alem.lk/welcome" url="https://alem.lk/welcome"
+time="2025-07-10T13:32:34+05:30" level=info msg="Executing analysis patterns..." url="https://alem.lk/welcome"
+time="2025-07-10T13:32:34+05:30" level=info msg="Executing pattern" pattern=headings
+time="2025-07-10T13:32:34+05:30" level=info msg="Starting heading count" pattern=headings url="https://alem.lk/welcome"
+time="2025-07-10T13:32:34+05:30" level=info msg="Heading count completed" pattern=headings result="map[h1:0 h2:0 h3:0 h4:0 h5:1 h6:0]"
+time="2025-07-10T13:32:34+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=headings
+time="2025-07-10T13:32:34+05:30" level=info msg="Executing pattern" pattern=html_version
+time="2025-07-10T13:32:34+05:30" level=info msg="Starting HTML version detection" pattern=html_version url="https://alem.lk/welcome"
+time="2025-07-10T13:32:34+05:30" level=info msg="Detected HTML5" pattern=html_version
+time="2025-07-10T13:32:34+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=html_version
+time="2025-07-10T13:32:34+05:30" level=info msg="Executing pattern" pattern=links
+time="2025-07-10T13:32:34+05:30" level=info msg="Starting link analysis" pattern=links url="https://alem.lk/welcome"
+time="2025-07-10T13:32:34+05:30" level=warning msg="[links] No HTTP client provided. Using default with 5s timeout"
+time="2025-07-10T13:32:35+05:30" level=info msg="Link analysis complete" broken=0 external=0 internal=1 total=1
+time="2025-07-10T13:32:35+05:30" level=info msg="Pattern executed successfully" elapsed=1.2462444s pattern=links
+time="2025-07-10T13:32:35+05:30" level=info msg="Executing pattern" pattern=login_form_found
+time="2025-07-10T13:32:35+05:30" level=info msg="Starting login form detection" pattern=login_form_found url="https://alem.lk/welcome"
+time="2025-07-10T13:32:35+05:30" level=info msg="Login form candidate found" has_email_user=true has_password=true has_submit=true is_post=true
+time="2025-07-10T13:32:35+05:30" level=info msg="Login forms detected" count=1
+time="2025-07-10T13:32:35+05:30" level=info msg="Login detection result" login_detected=true
+time="2025-07-10T13:32:35+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=login_form_found
+time="2025-07-10T13:32:35+05:30" level=info msg="Pattern execution completed" url="https://alem.lk/welcome"
+time="2025-07-10T13:32:35+05:30" level=info msg="Finished analysis for URL" url="https://alem.lk/welcome"
+time="2025-07-10T13:32:35+05:30" level=info msg="AnalysisResult constructed" url="https://alem.lk/welcome"
+time="2025-07-10T13:32:35+05:30" level=info msg="Analysis completed successfully" job_id=04f5c885-edce-4a04-a761-7bbac03af085 url="https://alem.lk/welcome"
+time="2025-07-10T13:32:35+05:30" level=info msg="Job marked as COMPLETED" job_id=04f5c885-edce-4a04-a761-7bbac03af085
+time="2025-07-10T13:32:36+05:30" level=info msg="Job retrieved from store" job_id=04f5c885-edce-4a04-a761-7bbac03af085
+time="2025-07-10T13:32:36+05:30" level=info msg="Handled request" client_ip="::1" duration="717µs" method=GET path=/v1/analyze/async/04f5c885-edce-4a04-a761-7bbac03af085 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:32:38+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=OPTIONS path=/v1/analyze status=204 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:32:39+05:30" level=info msg="Parsed URL successfully" parsed_url="https://alem.lk/welcome" url="https://alem.lk/welcome"
+time="2025-07-10T13:32:39+05:30" level=info msg="Executing analysis patterns..." url="https://alem.lk/welcome"
+time="2025-07-10T13:32:39+05:30" level=info msg="Executing pattern" pattern=headings
+time="2025-07-10T13:32:39+05:30" level=info msg="Starting heading count" pattern=headings url="https://alem.lk/welcome"
+time="2025-07-10T13:32:39+05:30" level=info msg="Heading count completed" pattern=headings result="map[h1:0 h2:0 h3:0 h4:0 h5:1 h6:0]"
+time="2025-07-10T13:32:39+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=headings
+time="2025-07-10T13:32:39+05:30" level=info msg="Executing pattern" pattern=html_version
+time="2025-07-10T13:32:39+05:30" level=info msg="Starting HTML version detection" pattern=html_version url="https://alem.lk/welcome"
+time="2025-07-10T13:32:39+05:30" level=info msg="Detected HTML5" pattern=html_version
+time="2025-07-10T13:32:39+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=html_version
+time="2025-07-10T13:32:39+05:30" level=info msg="Executing pattern" pattern=links
+time="2025-07-10T13:32:39+05:30" level=info msg="Starting link analysis" pattern=links url="https://alem.lk/welcome"
+time="2025-07-10T13:32:40+05:30" level=info msg="Link analysis complete" broken=0 external=0 internal=1 total=1
+time="2025-07-10T13:32:40+05:30" level=info msg="Pattern executed successfully" elapsed=1.244403s pattern=links
+time="2025-07-10T13:32:40+05:30" level=info msg="Executing pattern" pattern=login_form_found
+time="2025-07-10T13:32:40+05:30" level=info msg="Starting login form detection" pattern=login_form_found url="https://alem.lk/welcome"
+time="2025-07-10T13:32:40+05:30" level=info msg="Login form candidate found" has_email_user=true has_password=true has_submit=true is_post=true
+time="2025-07-10T13:32:40+05:30" level=info msg="Login forms detected" count=1
+time="2025-07-10T13:32:40+05:30" level=info msg="Login detection result" login_detected=true
+time="2025-07-10T13:32:40+05:30" level=info msg="Pattern executed successfully" elapsed="997.1µs" pattern=login_form_found
+time="2025-07-10T13:32:40+05:30" level=info msg="Pattern execution completed" url="https://alem.lk/welcome"
+time="2025-07-10T13:32:40+05:30" level=info msg="Finished analysis for URL" url="https://alem.lk/welcome"
+time="2025-07-10T13:32:40+05:30" level=info msg="AnalysisResult constructed" url="https://alem.lk/welcome"
+time="2025-07-10T13:32:40+05:30" level=info msg="Handled request" client_ip="::1" duration=2.5198016s method=POST path=/v1/analyze status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:32:49+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=OPTIONS path=/v1/analyze/async status=204 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:32:49+05:30" level=info msg="Starting async analysis" url="https://go.dev/doc/modules/managing-dependencies"
+time="2025-07-10T13:32:49+05:30" level=info msg="Created new job" job_id=46038480-c14b-4859-958c-d56b97168460 url="https://go.dev/doc/modules/managing-dependencies"
+time="2025-07-10T13:32:49+05:30" level=info msg="Job created" job_id=46038480-c14b-4859-958c-d56b97168460 url="https://go.dev/doc/modules/managing-dependencies"
+time="2025-07-10T13:32:49+05:30" level=info msg="Handled request" client_ip="::1" duration="603.6µs" method=POST path=/v1/analyze/async status=202 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:32:49+05:30" level=info msg="Running analysis" job_id=46038480-c14b-4859-958c-d56b97168460 url="https://go.dev/doc/modules/managing-dependencies"
+time="2025-07-10T13:32:51+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:32:51+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:32:52+05:30" level=info msg="Parsed URL successfully" parsed_url="https://go.dev/doc/modules/managing-dependencies" url="https://go.dev/doc/modules/managing-dependencies"
+time="2025-07-10T13:32:52+05:30" level=info msg="Executing analysis patterns..." url="https://go.dev/doc/modules/managing-dependencies"
+time="2025-07-10T13:32:52+05:30" level=info msg="Executing pattern" pattern=headings
+time="2025-07-10T13:32:52+05:30" level=info msg="Starting heading count" pattern=headings url="https://go.dev/doc/modules/managing-dependencies"
+time="2025-07-10T13:32:52+05:30" level=info msg="Heading count completed" pattern=headings result="map[h1:1 h2:15 h3:2 h4:0 h5:0 h6:0]"
+time="2025-07-10T13:32:52+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=headings
+time="2025-07-10T13:32:52+05:30" level=info msg="Executing pattern" pattern=html_version
+time="2025-07-10T13:32:52+05:30" level=info msg="Starting HTML version detection" pattern=html_version url="https://go.dev/doc/modules/managing-dependencies"
+time="2025-07-10T13:32:52+05:30" level=info msg="Detected HTML5" pattern=html_version
+time="2025-07-10T13:32:52+05:30" level=info msg="Pattern executed successfully" elapsed="511.5µs" pattern=html_version
+time="2025-07-10T13:32:52+05:30" level=info msg="Executing pattern" pattern=links
+time="2025-07-10T13:32:52+05:30" level=info msg="Starting link analysis" pattern=links url="https://go.dev/doc/modules/managing-dependencies"
+time="2025-07-10T13:32:53+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:32:53+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:32:55+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:32:55+05:30" level=info msg="Handled request" client_ip="::1" duration="537.2µs" method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:32:57+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:32:57+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:32:59+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:32:59+05:30" level=info msg="Handled request" client_ip="::1" duration="826µs" method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:01+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:01+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:02+05:30" level=warning msg="Broken link" error="<nil>" link="https://www.meetup.com/pro/go" status=403
+time="2025-07-10T13:33:03+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:03+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:05+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:05+05:30" level=info msg="Handled request" client_ip="::1" duration="333.8µs" method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:06+05:30" level=warning msg="Broken link" error="<nil>" link="https://twitter.com/golang" status=403
+time="2025-07-10T13:33:07+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:07+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:09+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:09+05:30" level=info msg="Handled request" client_ip="::1" duration="753.8µs" method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:11+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:11+05:30" level=info msg="Handled request" client_ip="::1" duration="868.8µs" method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:13+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:13+05:30" level=info msg="Handled request" client_ip="::1" duration="995.1µs" method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:15+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:15+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:17+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:17+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:19+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:19+05:30" level=info msg="Handled request" client_ip="::1" duration="581µs" method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:20+05:30" level=warning msg="Broken link" error="<nil>" link="https://www.meetup.com/pro/go" status=403
+time="2025-07-10T13:33:21+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:21+05:30" level=info msg="Handled request" client_ip="::1" duration="746.8µs" method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:23+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:23+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:23+05:30" level=warning msg="Broken link" error="<nil>" link="https://twitter.com/golang" status=403
+time="2025-07-10T13:33:25+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:25+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:27+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:27+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:29+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:29+05:30" level=info msg="Handled request" client_ip="::1" duration="993.5µs" method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:31+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:31+05:30" level=info msg="Handled request" client_ip="::1" duration="666.5µs" method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:33+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:33+05:30" level=info msg="Handled request" client_ip="::1" duration=1.0021ms method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:35+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:35+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:37+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:37+05:30" level=info msg="Handled request" client_ip="::1" duration="475.5µs" method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:39+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:39+05:30" level=info msg="Handled request" client_ip="::1" duration="853.9µs" method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:41+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:41+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:43+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:43+05:30" level=info msg="Handled request" client_ip="::1" duration="905.6µs" method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:45+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:45+05:30" level=info msg="Handled request" client_ip="::1" duration="654.9µs" method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:47+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:47+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:49+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:49+05:30" level=info msg="Handled request" client_ip="::1" duration=5.8981ms method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:51+05:30" level=warning msg="Broken link" error="<nil>" link="https://stackoverflow.com/questions/tagged/go?tab=Newest" status=403
+time="2025-07-10T13:33:51+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:51+05:30" level=info msg="Handled request" client_ip="::1" duration=4.8119ms method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:53+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:53+05:30" level=info msg="Handled request" client_ip="::1" duration=1.797ms method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:53+05:30" level=warning msg="Broken link" error="<nil>" link="https://go.dev/dl/" status=405
+time="2025-07-10T13:33:55+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:55+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:57+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:57+05:30" level=info msg="Handled request" client_ip="::1" duration=1.8367ms method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:33:59+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:33:59+05:30" level=info msg="Handled request" client_ip="::1" duration=1.49ms method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:34:00+05:30" level=warning msg="Broken link" error="<nil>" link="https://www.twitter.com/golang" status=403
+time="2025-07-10T13:34:00+05:30" level=warning msg="Broken link" error="<nil>" link="https://www.twitter.com/golang" status=403
+time="2025-07-10T13:34:01+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:34:01+05:30" level=info msg="Handled request" client_ip="::1" duration=3.6876ms method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:34:03+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:34:03+05:30" level=info msg="Handled request" client_ip="::1" duration=1.3575ms method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:34:03+05:30" level=warning msg="Broken link" error="<nil>" link="https://www.meetup.com/pro/go" status=403
+time="2025-07-10T13:34:05+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:34:05+05:30" level=info msg="Handled request" client_ip="::1" duration=2.6481ms method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:34:07+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:34:07+05:30" level=info msg="Handled request" client_ip="::1" duration=6.2949ms method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:34:09+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:34:09+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:34:11+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:34:11+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+time="2025-07-10T13:34:11+05:30" level=info msg="Link analysis complete" broken=9 external=28 internal=100 total=137
+time="2025-07-10T13:34:11+05:30" level=info msg="Pattern executed successfully" elapsed=1m18.876518s pattern=links
+time="2025-07-10T13:34:11+05:30" level=info msg="Executing pattern" pattern=login_form_found
+time="2025-07-10T13:34:11+05:30" level=info msg="Starting login form detection" pattern=login_form_found url="https://go.dev/doc/modules/managing-dependencies"
+time="2025-07-10T13:34:11+05:30" level=info msg="Login forms detected" count=0
+time="2025-07-10T13:34:11+05:30" level=info msg="Login detection result" login_detected=false
+time="2025-07-10T13:34:11+05:30" level=info msg="Pattern executed successfully" elapsed=0s pattern=login_form_found
+time="2025-07-10T13:34:11+05:30" level=info msg="Pattern execution completed" url="https://go.dev/doc/modules/managing-dependencies"
+time="2025-07-10T13:34:11+05:30" level=info msg="Finished analysis for URL" url="https://go.dev/doc/modules/managing-dependencies"
+time="2025-07-10T13:34:11+05:30" level=info msg="AnalysisResult constructed" url="https://go.dev/doc/modules/managing-dependencies"
+time="2025-07-10T13:34:11+05:30" level=info msg="Analysis completed successfully" job_id=46038480-c14b-4859-958c-d56b97168460 url="https://go.dev/doc/modules/managing-dependencies"
+time="2025-07-10T13:34:11+05:30" level=info msg="Job marked as COMPLETED" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:34:13+05:30" level=info msg="Job retrieved from store" job_id=46038480-c14b-4859-958c-d56b97168460
+time="2025-07-10T13:34:13+05:30" level=info msg="Handled request" client_ip="::1" duration=0s method=GET path=/v1/analyze/async/46038480-c14b-4859-958c-d56b97168460 status=200 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
